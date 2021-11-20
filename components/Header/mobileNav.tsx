@@ -25,7 +25,7 @@ export default function MobileNav(){
           my={5}
           w="100%"
         >
-          Cadastrar
+          Entrar
         </Button>
       </NextLink>
     </Stack>
