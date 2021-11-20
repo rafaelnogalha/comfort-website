@@ -26,7 +26,7 @@ export default function DesktopNav(){
           my={5}
           w="100%"
         >
-          Cadastrar
+          Entrar
         </Button>
       </NextLink>     
     </Stack>
