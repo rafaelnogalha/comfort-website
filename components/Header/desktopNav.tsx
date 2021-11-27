@@ -13,7 +13,7 @@ export default function DesktopNav(){
       direction={"row"}
       spacing={4}
     >
-      <NextLink href="/" passHref>
+      <NextLink href="/">
         <Button 
           as="a"
           color="gray.900"
@@ -22,7 +22,7 @@ export default function DesktopNav(){
             bg : 'gray.900',
             color : 'white'
           }}
-          aria-label="Home"
+          aria-label="Register"
           my={5}
           w="100%"
         >

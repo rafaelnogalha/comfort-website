@@ -4,6 +4,8 @@ import { theme } from '../styles/theme'
 
 import Header from '../components/Header';
 import Head from 'next/head';
+import Home from '.';
+import CheckoutForm from '../components/CheckoutForm';
 // import Footer from '../components/Footer';
 
 

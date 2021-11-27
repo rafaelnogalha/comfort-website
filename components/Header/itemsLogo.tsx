@@ -1,29 +1,22 @@
-import { 
-  Button,
-  Stack,
-  Text
-} from "@chakra-ui/react";
-import NextLink from 'next/link'
+import NextLink from 'next/link';
 
-export default function MobileNav(){
-  return(
-    <Stack
-      align="start"
+import { 
+  Box,
+  Button,
+  Link
+} from '@chakra-ui/react';
+
+export default function ItemsLogo (){
+  return (
+    <>
+    <Box
+      display={{ base: 'none', md: 'flex' }}
+    >
+      <Link
+        to="about"
+        smooth={true}
+        duration={500}
       >
-      <NextLink href="/" passHref>
-        <Button 
-          as="a"
-          color="gray.900"
-          variant="ghost"
-          _hover={{ 
-            color: "gray.500"
-          }}
-          aria-label="about"
-        >
-          Doe
-        </Button>
-      </NextLink>
-      <NextLink href="/" passHref>
         <Button 
           as="a"
           color="gray.900"
@@ -35,8 +28,12 @@ export default function MobileNav(){
         >
           Sobre
         </Button>
-      </NextLink>
-      <NextLink href="/" passHref>
+      </Link>
+      <Link
+        to="vision"
+        smooth={true}
+        duration={500}
+      >
         <Button 
           as="a"
           color="gray.900"
@@ -44,12 +41,16 @@ export default function MobileNav(){
           _hover={{ 
             color: "gray.500"
           }}
-          aria-label="about"
+          aria-label="vison"
         >
           Visão
         </Button>
-      </NextLink>
-      <NextLink href="/" passHref>
+      </Link>
+      <Link
+        to="projects"
+        smooth={true}
+        duration={500}
+      >
         <Button 
           as="a"
           color="gray.900"
@@ -57,12 +58,16 @@ export default function MobileNav(){
           _hover={{ 
             color: "gray.500"
           }}
-          aria-label="about"
+          aria-label="projects"
         >
           Projetos
         </Button>
-      </NextLink>
-      <NextLink href="/" passHref>
+      </Link>
+      <Link
+        to="partnership"
+        smooth={true}
+        duration={500}
+      >
         <Button 
           as="a"
           color="gray.900"
@@ -70,12 +75,16 @@ export default function MobileNav(){
           _hover={{ 
             color: "gray.500"
           }}
-          aria-label="about"
+          aria-label="partnership"
         >
           Parceiros
         </Button>
-      </NextLink>
-      <NextLink href="/" passHref>
+      </Link>
+      <Link
+        to="volunters"
+        smooth={true}
+        duration={500}
+      >
         <Button 
           as="a"
           color="gray.900"
@@ -83,12 +92,12 @@ export default function MobileNav(){
           _hover={{ 
             color: "gray.500"
           }}
-          aria-label="about"
+          aria-label="volunters"
         >
           Voluntariado
         </Button>
-      </NextLink>
-      
-    </Stack>
-  ) 
+      </Link>
+    </Box>
+    </>
+  )
 }

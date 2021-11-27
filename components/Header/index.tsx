@@ -1,37 +1,48 @@
-import { 
+import {
   Box,
   Flex,
   IconButton,
   Text,
-  useBreakpointValue,
-  useColorModeValue, 
   useDisclosure,
   Image,
   Collapse,
   Stack,
-  Button
+  Button,
+  Drawer,
+  DrawerContent,
+  DrawerHeader,
+  DrawerBody,
+  DrawerOverlay,
+  DrawerCloseButton
 } from '@chakra-ui/react';
 import {
   HamburgerIcon,
   CloseIcon,
 } from '@chakra-ui/icons';
-import Head from 'next/head'
-
+import NextLink from 'next/link';
+import {Link} from 'react-scroll';
 import DesktopNav from './desktopNav'
 import MobileNav from './mobileNav';
+// import ItemsLogo from './itemsLogo';
 
 export default function Header(){
-  const { isOpen, onToggle } = useDisclosure();
+  const { isOpen, onToggle, onClose } = useDisclosure();
   return(
+
+
+    <Box
+      opacity={1}
+      bg="white"
+
+      py={{ base: 2 }}
+      px={{ base: 4 }}
+      borderStyle={'solid'}
+      align={'center'}
       
 
-    <Box>
+    >
       <Flex
-        bg="white"
-        minH={'60px'}
-        py={{ base: 2 }}
-        px={{ base: 4 }}
-        borderStyle={'solid'}
+        maxWidth={1300}
         align={'center'}
       >
         <Flex
@@ -42,7 +53,7 @@ export default function Header(){
           <IconButton
             color="gray.900"
             bg={"gray.50"}
-            _hover={{ 
+            _hover={{
               bg: "gray.100",
               color: "gray.900"
             }}
@@ -53,18 +64,109 @@ export default function Header(){
               isOpen ? <CloseIcon /> : <HamburgerIcon />
             }
           />
-          
+
         </Flex>
         <Flex
-          flex={{ base: 1 }} 
+          flex={{ base: 1 }}
           justify={{ base: 'center', md: 'start' }}
+          align={{ base: 'center', md: 'center' }}
         >
           <Image
             borderRadius="full"
             alt={'home pic'}
             w="70px"
             src="/Comfort_Icon_Gold.png"
-          />  
+          />
+          <Box
+            display={{ base: 'none', md: 'flex' }}
+          >
+            <Link
+              to="about"
+              smooth={true}
+              duration={500}
+            >
+              <Button 
+                as="a"
+                color="gray.900"
+                variant="ghost"
+                _hover={{ 
+                  color: "gray.500"
+                }}
+                aria-label="about"
+              >
+                Sobre
+              </Button>
+            </Link>
+            <Link
+              to="vision"
+              smooth={true}
+              duration={500}
+            >
+              <Button 
+                as="a"
+                color="gray.900"
+                variant="ghost"
+                _hover={{ 
+                  color: "gray.500"
+                }}
+                aria-label="vison"
+              >
+                Visão
+              </Button>
+            </Link>
+            <Link
+              to="projects"
+              smooth={true}
+              duration={500}
+            >
+              <Button 
+                as="a"
+                color="gray.900"
+                variant="ghost"
+                _hover={{ 
+                  color: "gray.500"
+                }}
+                aria-label="projects"
+              >
+                Projetos
+              </Button>
+            </Link>
+            <Link
+              to="partnership"
+              smooth={true}
+              duration={500}
+            >
+              <Button 
+                as="a"
+                color="gray.900"
+                variant="ghost"
+                _hover={{ 
+                  color: "gray.500"
+                }}
+                aria-label="partnership"
+              >
+                Parceiros
+              </Button>
+            </Link>
+            <Link
+              to="volunters"
+              smooth={true}
+              duration={500}
+            >
+              <Button 
+                as="a"
+                color="gray.900"
+                variant="ghost"
+                _hover={{ 
+                  color: "gray.500"
+                }}
+                aria-label="volunters"
+              >
+                Voluntariado
+              </Button>
+            </Link>
+          </Box>
+          {/* <ItemsLogo /> */}
         </Flex>
 
         <Stack
@@ -74,40 +176,88 @@ export default function Header(){
           spacing={2}
         >
 
-          <Button
-            // display={{ base: 'none', md: 'inline-flex' }}
-            fontSize={'sm'}
-            fontWeight={700}
-            color={'gray.900'}
-            variant="outline"
-            // bg={'gray.900'}
-            href={'#'}
-            _hover={{
-              bg : 'gray.900',
-              color : 'white'
-            }}
+          <Link
+            to="about"
+            smooth={true}
+            duration={500}
           >
-            Doe
-          </Button>
-          
+            <Button
+              // display={{ base: 'none', md: 'inline-flex' }}
+              fontSize={'sm'}
+              fontWeight={700}
+              color={'gray.900'}
+              variant="outline"
+              // bg={'gray.900'}
+              href={'#'}
+              _hover={{
+                bg : 'gray.900',
+                color : 'white'
+              }}
+            >
+              Doe
+            </Button>
+          </Link>
         </Stack>
 
-        <Flex 
-          display={{ base: 'none', md: 'flex' }} 
-          ml={1}  
+        <Flex
+          display={{ base: 'none', md: 'flex' }}
+          ml={1}
         >
           <DesktopNav />
         </Flex>
-        
-        
+
+
 
       </Flex>
-      <Collapse 
-        in={isOpen} 
+
+      <Drawer
+        placement="left"
+        onClose={onClose}
+        isOpen={isOpen}
+      >
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton
+
+            backgroundColor="gray.900"
+            color="white"
+            _hover={{
+              bg: "gray.200",
+              color: "gray.900"
+            }}
+          />
+          <DrawerHeader
+            borderBottomWidth="1px"
+            textAlign="center"
+          >
+            <NextLink href="/" passHref>
+              <Button
+                as="a"
+                backgroundColor="gray.900"
+                color="white"
+                _hover={{
+                  bg: "gray.200",
+                  color: "gray.900"
+                }}
+                aria-label="register"
+              >
+                ENTRAR
+              </Button>
+            </NextLink>
+          </DrawerHeader>
+          <DrawerBody>
+            <MobileNav />
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
+
+      {/* <Collapse
+
+        in={isOpen}
         animateOpacity
       >
         <MobileNav />
-      </Collapse>
+      </Collapse> */}
     </Box>
 
   );
