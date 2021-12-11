@@ -48,48 +48,7 @@ const CustomDonationInput = ({
           max={max}
           step={step}
           onChange={onChange}
-        ></Input>
-        <Input
-          className={className}
-          type="number"
-          name={name}
-          value={value}
-          min={min}
-          max={max}
-          step={step}
-          onChange={onChange}
-        ></Input>
-        <Input
-          className={className}
-          type="number"
-          name={name}
-          value={value}
-          min={min}
-          max={max}
-          step={step}
-          onChange={onChange}
-        ></Input>
-      </HStack>
-      <HStack>
-        <Input
-          className={className}
-          type="number"
-          name={name}
-          value={value}
-          min={min}
-          max={max}
-          step={step}
-          onChange={onChange}
-          width="120px"
-        ></Input>
-        <Input
-          type="range"
-          name={name}
-          value={value}
-          min={min}
-          max={max}
-          step={step}
-          onChange={onChange}
+          // width={{base:"200px",md:"200px", lg:"250px"}}
         ></Input>
       </HStack>
     </Box>

@@ -177,7 +177,7 @@ export default function Header(){
         >
 
           <Link
-            to="about"
+            to="banner"
             smooth={true}
             duration={500}
           >

@@ -1,42 +1,34 @@
 import React, { useState } from 'react'
 
 import { 
-  Flex,
-  Divider,
   Button,
-  Container,
-  Stack,
   Box,
-  Heading, 
   Text, 
-  Image, 
-  Center,
-  Badge
+  HStack,
+  Input
 } from '@chakra-ui/react';
 
 import CustomDonationInput from '../components/CustomDonationInput'
 import getStripe from '../utils/get-stripejs'
 import { fetchPostJSON } from '../utils/api-helpers'
 import * as config from '../config'
+import StandardDonationInput from './StandardDonationInput';
 
 const CheckoutForm = () => {
   const [loading, setLoading] = useState(false)
-  const [input, setInput] = useState({
-    customDonation: Math.round(config.MAX_AMOUNT / config.AMOUNT_STEP),
-  })
-
-  const handleInputChange: React.ChangeEventHandler<HTMLInputElement> = (e) =>
-    setInput({
-      ...input,
-      [e.currentTarget.name]: e.currentTarget.value,
-    })
+  // const [input, setInput] = useState({
+  //   customDonation: Math.round(config.MAX_AMOUNT / config.AMOUNT_STEP),
+  // })
+  const [input, setInput] = useState(0)
+  const [buttonActive, setButtonActive] = useState('50');
+  const handleChange = (event:any) => setInput(event.target.value)
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault()
     setLoading(true)
     // Create a Checkout Session.
     const response = await fetchPostJSON('/api/checkout_sessions', {
-      amount: input.customDonation,
+      amount: input,
     })
 
     if (response.statusCode === 500) {
@@ -59,21 +51,121 @@ const CheckoutForm = () => {
     setLoading(false)
   }
 
+ 
+
   return (
     <Box
       mt="20px"
     >
       <form onSubmit={handleSubmit}>
-        <CustomDonationInput
-          className="checkout-style"
-          name={'customDonation'}
-          value={input.customDonation}
-          min={config.MIN_AMOUNT}
-          max={config.MAX_AMOUNT}
-          step={config.AMOUNT_STEP}
-          currency={config.CURRENCY}
-          onChange={handleInputChange}
-        />
+        <Box>
+          <HStack
+            spacing={1} 
+          >
+            <Button 
+              bg = 'gray.900'
+              onClick={
+                () => {
+                  setButtonActive('50'); 
+                  setInput(50)
+                }
+                
+              }
+              backgroundColor={
+                buttonActive !== "50"
+                  ? "gray.900" 
+                  : "white"
+              }
+              color={
+                buttonActive !== "50"
+                  ? "white" 
+                  : "gray.900"
+              }
+            >
+              50
+            </Button>
+            <Button 
+              bg = 'gray.900'
+              onClick={
+                () => setButtonActive('100')
+              }
+              backgroundColor={
+                buttonActive !== "100"
+                  ? "gray.900" 
+                  : "white"
+              }
+              color={
+                buttonActive !== "100"
+                  ? "white" 
+                  : "gray.900"
+              }
+            >
+              100
+            </Button>
+            <Button 
+              bg = 'gray.900'
+              onClick={
+                () => {
+                  setButtonActive('150'); 
+                  setInput(150)
+              }
+                
+              }
+              backgroundColor={
+                buttonActive !== "150"
+                  ? "gray.900" 
+                  : "white"
+              }
+              color={
+                buttonActive !== "150"
+                  ? "white" 
+                  : "gray.900"
+              }
+            >
+              150
+            </Button>
+          </HStack>
+          <HStack
+            mt="5px"
+            spacing={1}
+          >
+            <Button 
+              bg = 'gray.900'
+              onClick={
+                () => {
+                  setButtonActive('200'); 
+                  setInput(200)
+              }
+                
+              }
+              backgroundColor={
+                buttonActive !== "200"
+                  ? "gray.900" 
+                  : "white"
+              }
+              color={
+                buttonActive !== "200"
+                  ? "white" 
+                  : "gray.900"
+              }
+            >
+              200
+            </Button>
+            <Box>
+              <Input
+                
+                onSelect={
+                  () => setButtonActive('custom')
+                }
+                onChange={
+                  handleChange
+                }
+                
+              >
+              </Input>
+            </Box>
+          </HStack>        
+        </Box>
         <Button
           mt="10px"
           type="submit"

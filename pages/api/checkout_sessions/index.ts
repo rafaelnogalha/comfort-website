@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import { CURRENCY, MIN_AMOUNT, MAX_AMOUNT } from '../../../config'
+import { CURRENCY, MAX_AMOUNT } from '../../../config'
 import { formatAmountForStripe } from '../../../utils/stripe-helpers'
 
 import Stripe from 'stripe'
@@ -17,7 +17,7 @@ export default async function handler(
     const amount: number = req.body.amount
     try {
       // Validate the amount that was passed from the client.
-      if (!(amount >= MIN_AMOUNT && amount <= MAX_AMOUNT)) {
+      if (!(amount <= MAX_AMOUNT)) {
         throw new Error('Invalid amount.')
       }
       // Create Checkout Sessions from body params.
@@ -33,7 +33,7 @@ export default async function handler(
           },
         ],
         success_url: `${req.headers.origin}/result?session_id={CHECKOUT_SESSION_ID}`,
-        cancel_url: `${req.headers.origin}/donate-with-checkout`,
+        cancel_url: `${req.headers.origin}/`,
       }
       const checkoutSession: Stripe.Checkout.Session =
         await stripe.checkout.sessions.create(params)
