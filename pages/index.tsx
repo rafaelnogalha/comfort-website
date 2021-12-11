@@ -13,6 +13,10 @@ import Head from 'next/head';
 import Banner from './sections/Banner';
 import About from './sections/About';
 import Vision from './sections/Vision';
+import Projects from './sections/Projects';
+import Partners from './sections/Partners';
+import Volunteer from './sections/volunteer';
+
 
 
 export default function Home() {
@@ -30,6 +34,9 @@ export default function Home() {
         <Banner />
         <About />
         <Vision />
+        <Projects />
+        <Partners />
+        <Volunteer />
       </Container>
       
     </>

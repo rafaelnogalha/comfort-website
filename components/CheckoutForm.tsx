@@ -19,7 +19,7 @@ const CheckoutForm = () => {
   // const [input, setInput] = useState({
   //   customDonation: Math.round(config.MAX_AMOUNT / config.AMOUNT_STEP),
   // })
-  const [input, setInput] = useState(0)
+  const [input, setInput] = useState(50)
   const [buttonActive, setButtonActive] = useState('50');
   const handleChange = (event:any) => setInput(event.target.value)
 
@@ -61,6 +61,7 @@ const CheckoutForm = () => {
         <Box>
           <HStack
             spacing={1} 
+            
           >
             <Button 
               bg = 'gray.900'
@@ -87,7 +88,10 @@ const CheckoutForm = () => {
             <Button 
               bg = 'gray.900'
               onClick={
-                () => setButtonActive('100')
+                () => {
+                  setButtonActive('100');
+                  setInput(100)
+                }
               }
               backgroundColor={
                 buttonActive !== "100"
