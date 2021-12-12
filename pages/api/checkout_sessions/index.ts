@@ -24,9 +24,10 @@ export default async function handler(
       const params: Stripe.Checkout.SessionCreateParams = {
         submit_type: 'donate',
         payment_method_types: ['card'],
+        
         line_items: [
           {
-            name: 'Custom amount donation',
+            name: 'Doação',
             amount: formatAmountForStripe(amount, CURRENCY),
             currency: CURRENCY,
             quantity: 1,

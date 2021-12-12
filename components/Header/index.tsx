@@ -38,8 +38,6 @@ export default function Header(){
       px={{ base: 4 }}
       borderStyle={'solid'}
       align={'center'}
-      
-
     >
       <Flex
         maxWidth={1300}
@@ -166,7 +164,6 @@ export default function Header(){
               </Button>
             </Link>
           </Box>
-          {/* <ItemsLogo /> */}
         </Flex>
 
         <Stack
@@ -182,12 +179,11 @@ export default function Header(){
             duration={500}
           >
             <Button
-              // display={{ base: 'none', md: 'inline-flex' }}
+              
               fontSize={'sm'}
               fontWeight={700}
               color={'gray.900'}
               variant="outline"
-              // bg={'gray.900'}
               href={'#'}
               _hover={{
                 bg : 'gray.900',
@@ -205,9 +201,6 @@ export default function Header(){
         >
           <DesktopNav />
         </Flex>
-
-
-
       </Flex>
 
       <Drawer
@@ -218,7 +211,6 @@ export default function Header(){
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton
-
             backgroundColor="gray.900"
             color="white"
             _hover={{
@@ -230,7 +222,11 @@ export default function Header(){
             borderBottomWidth="1px"
             textAlign="center"
           >
-            <NextLink href="/" passHref>
+            <Link
+              to="volunters"
+              smooth={true}
+              duration={500}
+            >
               <Button
                 as="a"
                 backgroundColor="gray.900"
@@ -243,21 +239,13 @@ export default function Header(){
               >
                 ENTRAR
               </Button>
-            </NextLink>
+            </Link>
           </DrawerHeader>
           <DrawerBody>
             <MobileNav />
           </DrawerBody>
         </DrawerContent>
       </Drawer>
-
-      {/* <Collapse
-
-        in={isOpen}
-        animateOpacity
-      >
-        <MobileNav />
-      </Collapse> */}
     </Box>
 
   );

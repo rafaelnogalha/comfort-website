@@ -4,13 +4,19 @@ import {
   Text
 } from "@chakra-ui/react";
 import NextLink from 'next/link'
+import {Link} from 'react-scroll';
 
 export default function MobileNav(){
   return(
     <Stack
       align="start"
       >
-      <NextLink href="/" passHref>
+      
+      <Link
+        to="banner"
+        smooth={true}
+        duration={500}
+      >
         <Button 
           as="a"
           color="gray.900"
@@ -22,8 +28,13 @@ export default function MobileNav(){
         >
           Doe
         </Button>
-      </NextLink>
-      <NextLink href="/" passHref>
+      </Link>
+
+      <Link
+        to="about"
+        smooth={true}
+        duration={500}
+      >
         <Button 
           as="a"
           color="gray.900"
@@ -35,7 +46,7 @@ export default function MobileNav(){
         >
           Sobre
         </Button>
-      </NextLink>
+      </Link>
       <NextLink href="/" passHref>
         <Button 
           as="a"

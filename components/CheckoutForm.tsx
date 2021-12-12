@@ -5,14 +5,14 @@ import {
   Box,
   Text, 
   HStack,
-  Input
+  Input,
+  InputGroup,
+  InputLeftAddon
 } from '@chakra-ui/react';
 
-import CustomDonationInput from '../components/CustomDonationInput'
+
 import getStripe from '../utils/get-stripejs'
 import { fetchPostJSON } from '../utils/api-helpers'
-import * as config from '../config'
-import StandardDonationInput from './StandardDonationInput';
 
 const CheckoutForm = () => {
   const [loading, setLoading] = useState(false)
@@ -64,7 +64,9 @@ const CheckoutForm = () => {
             
           >
             <Button 
+              variant='outline'
               bg = 'gray.900'
+              width='100%'
               onClick={
                 () => {
                   setButtonActive('50'); 
@@ -86,7 +88,9 @@ const CheckoutForm = () => {
               50
             </Button>
             <Button 
+              variant='outline'
               bg = 'gray.900'
+              width='100%'
               onClick={
                 () => {
                   setButtonActive('100');
@@ -107,7 +111,9 @@ const CheckoutForm = () => {
               100
             </Button>
             <Button 
+              variant='outline'
               bg = 'gray.900'
+              width='100%'
               onClick={
                 () => {
                   setButtonActive('150'); 
@@ -134,11 +140,14 @@ const CheckoutForm = () => {
             spacing={1}
           >
             <Button 
+              variant='outline'
               bg = 'gray.900'
+              width='40%'
               onClick={
                 () => {
                   setButtonActive('200'); 
                   setInput(200)
+                  
               }
                 
               }
@@ -155,19 +164,26 @@ const CheckoutForm = () => {
             >
               200
             </Button>
-            <Box>
+            
+            <InputGroup
+              width={{base: '90%', md: '87%', lg: '87%'}}
+            >
+              <InputLeftAddon 
+                children='R$'
+                color='white'
+                bg='gray.900'
+              />
               <Input
-                
                 onSelect={
                   () => setButtonActive('custom')
                 }
                 onChange={
                   handleChange
                 }
-                
               >
               </Input>
-            </Box>
+            </InputGroup>
+            
           </HStack>        
         </Box>
         <Button

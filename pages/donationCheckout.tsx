@@ -23,7 +23,7 @@ const DonatePage: NextPage = () => {
       >
 
         <Box
-          width={{ base: '90%', md: '90%', lg: '100%' }}
+          width={{ base: '100%', md: '100%', lg: '100%' }}
           rounded={'lg'}
           boxShadow={'lg'}
           p={10}
