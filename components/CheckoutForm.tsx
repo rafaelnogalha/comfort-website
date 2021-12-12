@@ -169,7 +169,7 @@ const CheckoutForm = () => {
               width={{base: '90%', md: '87%', lg: '87%'}}
             >
               <InputLeftAddon 
-                children='R$'
+                children={"R$"}
                 color='white'
                 bg='gray.900'
               />
