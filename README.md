@@ -7,3 +7,7 @@ npm run dev
 # or
 yarn dev
 ```
+
+## Observations
+
+You can edit as the way that you want, and remember to change the local enviroments variables! Good Coding.
