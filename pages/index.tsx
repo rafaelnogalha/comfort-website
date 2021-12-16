@@ -27,17 +27,47 @@ export default function Home() {
         <title>Comfort International Brasil</title>        
       </Head>
 
-      <Container
+      {/* <Container
         maxWidth={1200}
         py={{ base: "15vh", md: "15vh" }}
+      > */}
+      <Box
+        py={{ base: "15vh", md: "15vh" }}
+        backgroundImage={"background_banner.png"}
+        backgroundPosition={"center"}
+        backgroundSize={"cover"}
       >
         <Banner />
+      </Box>
+      <Box
+        py={{ base: "2vh", md: "2vh" }}
+      >
         <About />
+      </Box>
+      <Box
+        py={{ base: "2vh", md: "2vh" }}
+      >
         <Vision />
+      </Box>
+      <Box
+        py={{ base: "2vh", md: "2vh" }}
+
+      >
         <Projects />
+      </Box>
+      <Box
+        py={{ base: "2vh", md: "2vh" }}
+
+      >
         <Partners />
+      </Box>    
+      <Box
+        py={{ base: "2vh", md: "2vh" }}
+
+      >
         <Volunteer />
-      </Container>
+      </Box>
+      {/* </Container> */}
       
     </>
   )

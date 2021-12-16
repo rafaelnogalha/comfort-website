@@ -10,36 +10,40 @@ export default function Volunteer() {
         <title>Comfort International Brasil</title>        
       </Head>
       
-      
-      <Stack
-        mt="150px"
-        direction={{ base: 'column', md: 'column', lg: 'column' }} 
-        alignItems="center"
-        textAlign="center"
-        className="volunters"
+      <Container
+        maxWidth={1200}
       >
-        <Box
-          width={{ base: '85%', md: '85%', lg: '80%' }}
-          mr={{base: "5px", sm:"5px" , md:"5px" ,lg: "50px"}}
+
+        <Stack
+          mt="150px"
+          direction={{ base: 'column', md: 'column', lg: 'column' }} 
           alignItems="center"
           textAlign="center"
+          className="volunters"
         >
-          <Text
-            fontSize={{ base: '14px', md: '14px', lg: '18px' }}
-            mb={{ base: '2', md: '4' }}
-            textAlign="center"
+          <Box
+            width={{ base: '85%', md: '85%', lg: '80%' }}
+            mr={{base: "5px", sm:"5px" , md:"5px" ,lg: "50px"}}
             alignItems="center"
+            textAlign="center"
           >
-            FAÇA PARTE DO NOSSO TIME
-          </Text>
-          <Button
-            bg='black'
-          >  
-            CADASTRO
-          </Button>
-          
-        </Box>
-      </Stack>
+            <Text
+              fontSize={{ base: '14px', md: '14px', lg: '18px' }}
+              mb={{ base: '2', md: '4' }}
+              textAlign="center"
+              alignItems="center"
+            >
+              FAÇA PARTE DO NOSSO TIME
+            </Text>
+            <Button
+              bg='black'
+            >  
+              CADASTRO
+            </Button>
+            
+          </Box>
+        </Stack>
+      </Container>
 
     </>
   )

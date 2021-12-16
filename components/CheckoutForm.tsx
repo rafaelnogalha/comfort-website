@@ -4,6 +4,7 @@ import {
   Button,
   Box,
   Text, 
+  Image,
   HStack,
   Input,
   InputGroup,
@@ -16,9 +17,7 @@ import { fetchPostJSON } from '../utils/api-helpers'
 
 const CheckoutForm = () => {
   const [loading, setLoading] = useState(false)
-  // const [input, setInput] = useState({
-  //   customDonation: Math.round(config.MAX_AMOUNT / config.AMOUNT_STEP),
-  // })
+
   const [input, setInput] = useState(50)
   const [buttonActive, setButtonActive] = useState('50');
   const handleChange = (event:any) => setInput(event.target.value)
@@ -61,11 +60,17 @@ const CheckoutForm = () => {
         <Box>
           <HStack
             spacing={1} 
-            
           >
             <Button 
-              variant='outline'
-              bg = 'gray.900'
+              _hover={{ 
+                bg: 'white',
+                color: 'gray.900'
+              }}
+              opacity = {
+                buttonActive !== "50"
+                  ? "45%" 
+                  : "100%"
+              }
               width='100%'
               onClick={
                 () => {
@@ -76,63 +81,78 @@ const CheckoutForm = () => {
               }
               backgroundColor={
                 buttonActive !== "50"
-                  ? "gray.900" 
-                  : "white"
+                  ? "gray.700" 
+                  : "yellow.comfort"
               }
               color={
                 buttonActive !== "50"
                   ? "white" 
-                  : "gray.900"
+                  : "white"
               }
             >
-              50
+              R$ 50
             </Button>
             <Button 
-              variant='outline'
-              bg = 'gray.900'
+              _hover={{ 
+                bg: 'white',
+                color: 'gray.900'
+              }}
+              opacity = {
+                buttonActive !== "100"
+                  ? "45%" 
+                  : "100%"
+              }
               width='100%'
               onClick={
                 () => {
-                  setButtonActive('100');
+                  setButtonActive('100'); 
                   setInput(100)
                 }
+                
               }
               backgroundColor={
                 buttonActive !== "100"
-                  ? "gray.900" 
-                  : "white"
+                  ? "gray.700" 
+                  : "yellow.comfort"
               }
               color={
                 buttonActive !== "100"
                   ? "white" 
-                  : "gray.900"
+                  : "white"
               }
             >
-              100
+              R$ 100
             </Button>
             <Button 
-              variant='outline'
-              bg = 'gray.900'
+              _hover={{ 
+                bg: 'white',
+                color: 'gray.900'
+              }}
+              opacity = {
+                buttonActive !== "150"
+                  ? "45%" 
+                  : "100%"
+              }
               width='100%'
               onClick={
                 () => {
                   setButtonActive('150'); 
                   setInput(150)
-              }
+                }
                 
               }
               backgroundColor={
                 buttonActive !== "150"
-                  ? "gray.900" 
-                  : "white"
+                  ? "gray.700" 
+                  : "yellow.comfort"
               }
               color={
                 buttonActive !== "150"
                   ? "white" 
-                  : "gray.900"
+                  : "white"
               }
             >
-              150
+              R$ 150
             </Button>
           </HStack>
           <HStack
@@ -140,59 +160,110 @@ const CheckoutForm = () => {
             spacing={1}
           >
             <Button 
-              variant='outline'
-              bg = 'gray.900'
               width='40%'
+              _hover={{ 
+                bg: 'white',
+                color: 'gray.900'
+              }}
+              opacity = {
+                buttonActive !== "200"
+                  ? "45%" 
+                  : "100%"
+              }
               onClick={
                 () => {
                   setButtonActive('200'); 
                   setInput(200)
-                  
-              }
+                }
                 
               }
               backgroundColor={
                 buttonActive !== "200"
-                  ? "gray.900" 
-                  : "white"
+                  ? "gray.700" 
+                  : "yellow.comfort"
               }
               color={
                 buttonActive !== "200"
                   ? "white" 
-                  : "gray.900"
+                  : "white"
               }
             >
-              200
+              R$ 200
             </Button>
             
             <InputGroup
               width={{base: '90%', md: '87%', lg: '87%'}}
+              opacity = {
+                buttonActive !== "custom"
+                  ? "45%" 
+                  : "100%"
+              }
+              
             >
-              <InputLeftAddon 
-                children={"R$"}
-                color='white'
-                bg='gray.900'
-              />
-              <Input
-                onSelect={
-                  () => setButtonActive('custom')
-                }
-                onChange={
-                  handleChange
-                }
-              >
-              </Input>
+              {
+                buttonActive === "custom" && 
+                  <InputLeftAddon 
+                    backgroundColor={
+                      buttonActive !== "custom"
+                        ? "gray.700" 
+                        : "yellow.comfort"
+                    }
+                    children={"R$"}
+                    color='white'
+                  />
+              }  
+              {
+                buttonActive !== "custom" &&
+                  <Button
+                    width="100%"
+                    backgroundColor={
+                      buttonActive !== "custom"
+                        ? "gray.700" 
+                        : "yellow.comfort"
+                    }
+                    color={
+                      buttonActive !== "custom"
+                        ? "white" 
+                        : "white"
+                    }
+                    _hover={{ 
+                      bg: 'white',
+                      color: 'gray.900'
+                    }}
+                    onClick={
+                      () => setButtonActive('custom')
+                    }
+                  >
+                    Outro valor
+                  </Button>
+                ||
+                buttonActive === "custom" &&
+                <Input
+                  placeholder='Digite o valor'
+                  backgroundColor={"gray.900"}
+                  onChange={
+                    handleChange
+                  }
+                >
+                  
+                </Input>
+              }
+              
             </InputGroup>
             
           </HStack>        
         </Box>
         <Button
+          _hover={{ 
+            bg: 'white',
+            color: 'gray.900'
+          }}
           mt="10px"
           type="submit"
           disabled={loading}
           width="100%"
-          backgroundColor="white"
-          color="gray.900"
+          backgroundColor="yellow.comfort"
+          color="white"
         >
           Doar
         </Button>
