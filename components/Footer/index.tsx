@@ -5,7 +5,8 @@ import Copyright from "./copyright";
 export default function Footer(){
   return(
     <Box 
-      as="footer"
+      align="center"
+      // as="footer"
       role="contentinfo"
       mx="auto" 
       maxW="5xl" 

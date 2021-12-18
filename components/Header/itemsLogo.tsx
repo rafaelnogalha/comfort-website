@@ -9,95 +9,95 @@ import {
 export default function ItemsLogo (){
   return (
     <>
-    <Box
-      display={{ base: 'none', md: 'flex' }}
-    >
-      <Link
-        to="about"
-        smooth={true}
-        duration={500}
+      <Box
+        display={{ base: 'none', md: 'flex' }}
       >
-        <Button 
-          as="a"
-          color="gray.900"
-          variant="ghost"
-          _hover={{ 
-            color: "gray.500"
-          }}
-          aria-label="about"
+        <Link
+          to="about"
+          smooth={true}
+          duration={500}
         >
-          Sobre
-        </Button>
-      </Link>
-      <Link
-        to="vision"
-        smooth={true}
-        duration={500}
-      >
-        <Button 
-          as="a"
-          color="gray.900"
-          variant="ghost"
-          _hover={{ 
-            color: "gray.500"
-          }}
-          aria-label="vison"
+          <Button 
+            as="a"
+            color="gray.900"
+            variant="ghost"
+            _hover={{ 
+              color: "gray.500"
+            }}
+            aria-label="about"
+          >
+            Sobre
+          </Button>
+        </Link>
+        <Link
+          to="vision"
+          smooth={true}
+          duration={500}
         >
-          Visão
-        </Button>
-      </Link>
-      <Link
-        to="projects"
-        smooth={true}
-        duration={500}
-      >
-        <Button 
-          as="a"
-          color="gray.900"
-          variant="ghost"
-          _hover={{ 
-            color: "gray.500"
-          }}
-          aria-label="projects"
+          <Button 
+            as="a"
+            color="gray.900"
+            variant="ghost"
+            _hover={{ 
+              color: "gray.500"
+            }}
+            aria-label="vison"
+          >
+            Visão
+          </Button>
+        </Link>
+        <Link
+          to="projects"
+          smooth={true}
+          duration={500}
         >
-          Projetos
-        </Button>
-      </Link>
-      <Link
-        to="partnership"
-        smooth={true}
-        duration={500}
-      >
-        <Button 
-          as="a"
-          color="gray.900"
-          variant="ghost"
-          _hover={{ 
-            color: "gray.500"
-          }}
-          aria-label="partnership"
+          <Button 
+            as="a"
+            color="gray.900"
+            variant="ghost"
+            _hover={{ 
+              color: "gray.500"
+            }}
+            aria-label="projects"
+          >
+            Projetos
+          </Button>
+        </Link>
+        <Link
+          to="partnership"
+          smooth={true}
+          duration={500}
         >
-          Parceiros
-        </Button>
-      </Link>
-      <Link
-        to="volunters"
-        smooth={true}
-        duration={500}
-      >
-        <Button 
-          as="a"
-          color="gray.900"
-          variant="ghost"
-          _hover={{ 
-            color: "gray.500"
-          }}
-          aria-label="volunters"
+          <Button 
+            as="a"
+            color="gray.900"
+            variant="ghost"
+            _hover={{ 
+              color: "gray.500"
+            }}
+            aria-label="partnership"
+          >
+            Parceiros
+          </Button>
+        </Link>
+        <Link
+          to="volunters"
+          smooth={true}
+          duration={500}
         >
-          Voluntariado
-        </Button>
-      </Link>
-    </Box>
+          <Button 
+            as="a"
+            color="gray.900"
+            variant="ghost"
+            _hover={{ 
+              color: "gray.500"
+            }}
+            aria-label="volunters"
+          >
+            Voluntariado
+          </Button>
+        </Link>
+      </Box>
     </>
   )
 }

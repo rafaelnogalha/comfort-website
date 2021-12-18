@@ -33,7 +33,7 @@ export default function Projects() {
       >
 
         <Stack
-          mt="150px"
+          mt="60px"
           direction={{ base: 'column', md: 'column', lg: 'column' }} 
           alignItems="center"
           className="projects"
@@ -43,19 +43,20 @@ export default function Projects() {
             mr={{base: "5px", sm:"5px" , md:"5px" ,lg: "50px"}}
           >
             <Text
-              fontSize={{ base: '16px', md: '16px', lg: '18px' }}
+              fontSize={{ base: '25px', md: '30px', lg: '30px' }}
+              fontWeight={800}
               mb={{ base: '2', md: '4' }}
               textAlign={['center', 'center', 'center', 'center']} 
-              
             >
               MUDANDO VIDAS
             </Text>
 
             <Text
-              fontSize={{ base: '20px', md: '28px', lg: '24px' }}
+              fontSize={{ base: '25px', md: '30px', lg: '30px' }}
+              color="yellow.comfort"
+              fontWeight={300}
               mb={{ base: '2', md: '4' }}
               textAlign={['center', 'center', 'center', 'center']} 
-              
             >
               TRANSFORMANDO COMUNIDADES
             </Text>
@@ -65,7 +66,6 @@ export default function Projects() {
               fontSize={{ base: '16px', md: '16px', lg: '20px' }}
               mb={{ base: '2', md: '4' }}
               textAlign={['center', 'center', 'center', 'center']} 
-              
             >
               Esses são alguns dos projetos que apoiamos, 
               e os principais que o Brasil tem ajudado. 
@@ -88,6 +88,7 @@ export default function Projects() {
                 mb={{ base: '2', md: '4' }}
                 textAlign={['center', 'center', 'center', 'center']} 
                 color="gray.900"
+                fontWeight={600}
               >
                 RESGATE DE CRIANÇAS DE RUA
               </Text>
@@ -121,7 +122,7 @@ export default function Projects() {
                 fontSize={{ base: '20px', md: '28px', lg: '24px' }}
                 mb={{ base: '2', md: '4' }}
                 textAlign={['center', 'center', 'center', 'center']} 
-                
+                fontWeight={600}
               >
                 FILHOS DA LIBERDADE
               </Text>

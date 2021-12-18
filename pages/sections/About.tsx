@@ -21,14 +21,14 @@ export default function About() {
           className="about"
         >
           <Box
-            width={{ base: '85%', md: '85%', lg: '80%' }}
+            width={{ base: '100%', md: '100%', lg: '100%' }}
             mr={{base: "5px", sm:"5px" , md:"5px" ,lg: "50px"}}
           >
             <Text
-              fontSize={{ base: '14px', md: '14px', lg: '18px' }}
+              fontSize={{ base: '25px', md: '30px', lg: '30px' }}
+              fontWeight={800}
               mb={{ base: '2', md: '4' }}
               textAlign={['center', 'center', 'center', 'center']} 
-              
             >
               SOBRE NÓS
             </Text>
@@ -37,8 +37,23 @@ export default function About() {
               mb={{ base: '2', md: '4' }}
               textAlign={['center', 'center', 'center', 'center']} 
             >
-              Uma associação criada para ajudar e 
-              encorajar vítimas de guerra e sobreviventes,
+              Uma associação criada para {' '} 
+              <Text
+                as="span"
+                fontWeight={600}
+                color="yellow.comfort"
+              >
+                ajudar {' '}
+              </Text> 
+              e {' '} 
+              <Text
+                as="span"
+                fontWeight={600}
+                color="yellow.comfort"
+              >
+                encorajar {''}
+              </Text>
+              vítimas de guerra e sobreviventes,
               do genocídio em Ruanda, em sua caminhada de 
               recuperação.
             </Text>

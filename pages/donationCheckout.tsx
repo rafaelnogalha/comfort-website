@@ -22,9 +22,7 @@ const DonatePage: NextPage = () => {
         justify={'center'}
         width={{ base: '300px', sm: "300px" ,md: "500px", lg: '500px' }}
       >
-
         <Box
-          
           width={{ base: '100%', md: '100%', lg: '100%' }}
           rounded={'lg'}
           boxShadow={'lg'}

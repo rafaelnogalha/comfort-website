@@ -37,7 +37,7 @@ export default function Banner() {
             
           </Box>
           <Box
-            width={{ base: '85%', md: '85%', lg: '55%' }}
+            width={{ base: '100%', md: '100%', lg: '55%' }}
             mr={{base: "5px", sm:"5px" , md:"5px" ,lg: "50px"}}
           >
             <Text

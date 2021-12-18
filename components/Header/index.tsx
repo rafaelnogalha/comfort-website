@@ -82,6 +82,7 @@ export default function Header(){
               to="about"
               smooth={true}
               duration={500}
+
             >
               <Button 
                 as="a"
@@ -172,7 +173,6 @@ export default function Header(){
           direction={'row'}
           spacing={2}
         >
-
           <Link
             to="banner"
             smooth={true}

@@ -1,38 +1,25 @@
 import { 
   Button,
   Stack,
-  Text
+  Text,
+  useDisclosure
 } from "@chakra-ui/react";
 import NextLink from 'next/link'
 import {Link} from 'react-scroll';
+import * as Scroll from 'react-scroll';
+
 
 export default function MobileNav(){
+  const { isOpen, onToggle, onClose } = useDisclosure();
   return(
     <Stack
       align="start"
       >
-      
-      <Link
-        to="banner"
-        smooth={true}
-        duration={500}
-      >
-        <Button 
-          as="a"
-          color="gray.900"
-          variant="ghost"
-          _hover={{ 
-            color: "gray.500"
-          }}
-          aria-label="about"
-        >
-          Doe
-        </Button>
-      </Link>
 
       <Link
         to="about"
         smooth={true}
+        onClick={onClose}
         duration={500}
       >
         <Button 

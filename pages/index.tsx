@@ -33,8 +33,8 @@ export default function Home() {
       > */}
       <Box
         py={{ base: "15vh", md: "15vh" }}
-        backgroundImage={"background_banner.png"}
-        backgroundPosition={"center"}
+        backgroundImage={{base: "background_2.jpg", md: "background_1.jpg"}}
+        backgroundPosition={{base: "right 60% bottom 50%", md: "right 70% bottom 75%", lg: "right 70% bottom 75%"}}
         backgroundSize={"cover"}
       >
         <Banner />
@@ -63,7 +63,7 @@ export default function Home() {
       </Box>    
       <Box
         py={{ base: "2vh", md: "2vh" }}
-
+      
       >
         <Volunteer />
       </Box>
