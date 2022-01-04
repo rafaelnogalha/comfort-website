@@ -75,34 +75,32 @@ export default function Carousel() {
 
   return (
     <Box className='content'>
-      <Box className='controls' >
-        {
-          (ProjectCards.length > 2 || isLarger800) &&
-          <>
-            <Button onClick={
-              sliderRef?.slickPrev
-            }>
-              <FaChevronLeft />
-            </Button>
-            <Button onClick={sliderRef?.slickNext}>
-              <FaChevronRight />
-            </Button>
-          </>
-        }
-      </Box>
       <Slider ref={setSliderRef} {...sliderSettings}>
         {ProjectCards.map((card, index) => (
-          <Box key={index} className='card'>
+          <Box 
+            key={index} 
+            className='card'
+            padding={'15px'}
+          >
             <Image 
               src={card.imageSrc} 
               alt={card.title} 
               className='card-image' 
             />
             <Box className='text-info'>
-              <Box className='card-header'>
-                <Text>{card.title}</Text>
+              <Box 
+                className='card-header'
+                textAlign='center'  
+              >
+                <Text
+                  fontSize={'26px'}
+                  fontWeight={400}
+                  color={'yellow.comfort'}
+                >{card.title}</Text>
               </Box>
-              <Text>
+              <Text
+                textAlign='justify'
+              >
                 <Text>{card.description}</Text>
               </Text>
             </Box>
