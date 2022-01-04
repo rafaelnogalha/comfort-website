@@ -44,7 +44,7 @@ export default function Banner() {
               fontSize={{ base: '3xl', md: '4xl' }}
               mb={{ base: '2', md: '4' }}
               textAlign={['center', 'center', 'center', 'center']} 
-              
+              fontWeight={600}
             >
               Um pouco pode mudar vidas
             </Text>

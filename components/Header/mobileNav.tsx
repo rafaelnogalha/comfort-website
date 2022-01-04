@@ -6,7 +6,6 @@ import {
 } from "@chakra-ui/react";
 import NextLink from 'next/link'
 import {Link} from 'react-scroll';
-import * as Scroll from 'react-scroll';
 
 
 export default function MobileNav(){
@@ -60,7 +59,7 @@ export default function MobileNav(){
           Projetos
         </Button>
       </NextLink>
-      <NextLink href="/" passHref>
+      {/* <NextLink href="/" passHref>
         <Button 
           as="a"
           color="gray.900"
@@ -72,8 +71,8 @@ export default function MobileNav(){
         >
           Parceiros
         </Button>
-      </NextLink>
-      <NextLink href="/" passHref>
+      </NextLink> */}
+      {/* <NextLink href="/" passHref>
         <Button 
           as="a"
           color="gray.900"
@@ -85,7 +84,7 @@ export default function MobileNav(){
         >
           Voluntariado
         </Button>
-      </NextLink>
+      </NextLink> */}
       
     </Stack>
   ) 

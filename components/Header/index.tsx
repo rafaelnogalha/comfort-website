@@ -29,15 +29,14 @@ export default function Header(){
   const { isOpen, onToggle, onClose } = useDisclosure();
   return(
 
-
     <Box
       opacity={1}
       bg="white"
-
       py={{ base: 2 }}
       px={{ base: 4 }}
       borderStyle={'solid'}
       align={'center'}
+      
     >
       <Flex
         maxWidth={1300}
@@ -82,7 +81,6 @@ export default function Header(){
               to="about"
               smooth={true}
               duration={500}
-
             >
               <Button 
                 as="a"
@@ -130,7 +128,7 @@ export default function Header(){
                 Projetos
               </Button>
             </Link>
-            <Link
+            {/* <Link
               to="partnership"
               smooth={true}
               duration={500}
@@ -146,8 +144,8 @@ export default function Header(){
               >
                 Parceiros
               </Button>
-            </Link>
-            <Link
+            </Link> */}
+            {/* <Link
               to="volunters"
               smooth={true}
               duration={500}
@@ -163,7 +161,7 @@ export default function Header(){
               >
                 Voluntariado
               </Button>
-            </Link>
+            </Link> */}
           </Box>
         </Flex>
 
@@ -179,7 +177,6 @@ export default function Header(){
             duration={500}
           >
             <Button
-              
               fontSize={'sm'}
               fontWeight={700}
               color={'gray.900'}
@@ -218,7 +215,7 @@ export default function Header(){
               color: "gray.900"
             }}
           />
-          <DrawerHeader
+          {/* <DrawerHeader
             borderBottomWidth="1px"
             textAlign="center"
           >
@@ -240,9 +237,68 @@ export default function Header(){
                 ENTRAR
               </Button>
             </Link>
-          </DrawerHeader>
+          </DrawerHeader> */}
           <DrawerBody>
-            <MobileNav />
+            {/* <MobileNav /> */}
+            <Stack
+              align="start"
+            >
+
+              <Link
+                to="about"
+                smooth={true}
+                onClick={onClose}
+                duration={500}
+              >
+                <Button 
+                  as="a"
+                  color="gray.900"
+                  variant="ghost"
+                  _hover={{ 
+                    color: "gray.500"
+                  }}
+                  aria-label="about"
+                >
+                  Sobre
+                </Button>
+              </Link>
+              <Link
+                to="vision"
+                smooth={true}
+                onClick={onClose}
+                duration={500}
+              >
+                <Button 
+                  as="a"
+                  color="gray.900"
+                  variant="ghost"
+                  _hover={{ 
+                    color: "gray.500"
+                  }}
+                  aria-label="vision"
+                >
+                  Visão
+                </Button>
+              </Link>
+              <Link
+                to="projects"
+                smooth={true}
+                onClick={onClose}
+                duration={500}
+              >
+                <Button 
+                  as="a"
+                  color="gray.900"
+                  variant="ghost"
+                  _hover={{ 
+                    color: "gray.500"
+                  }}
+                  aria-label="projects"
+                >
+                  Projetos
+                </Button>
+              </Link>
+            </Stack>
           </DrawerBody>
         </DrawerContent>
       </Drawer>

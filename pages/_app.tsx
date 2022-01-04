@@ -1,5 +1,5 @@
 import { AppProps } from 'next/app'
-import { ChakraProvider } from '@chakra-ui/react';
+import { Box, ChakraProvider } from '@chakra-ui/react';
 import { theme } from '../styles/theme'
 
 import Header from '../components/Header';
@@ -14,7 +14,15 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="shortcut icon" href="/Comfort_Icon_Gold.ico" />
       </Head>
       <ChakraProvider theme={theme}>
-        <Header />
+        <nav
+          style={{
+            position: 'sticky',
+            top: '0',
+            zIndex: '1'
+          }}
+        >
+          <Header />
+        </nav>
         <Component {...pageProps} />
         <Footer />
       </ChakraProvider>

@@ -34,8 +34,9 @@ const DonatePage: NextPage = () => {
             textAlign={['center']}
             fontSize={{ md: 'xl' }}
             mb="15px"
+            fontWeight={600}
           >
-            Faça uma doação
+            FAÇA UMA DOAÇÃO
           </Text>
           <Divider/>
           <CheckoutForm />

@@ -12,8 +12,9 @@ export default function DesktopNav(){
     <Stack
       direction={"row"}
       spacing={4}
+      
     >
-      <NextLink href="/">
+      {/* <NextLink href="/">
         <Button 
           as="a"
           color="gray.900"
@@ -28,7 +29,7 @@ export default function DesktopNav(){
         >
           Entrar
         </Button>
-      </NextLink>     
+      </NextLink>      */}
     </Stack>
   )
 }

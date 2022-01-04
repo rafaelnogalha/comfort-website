@@ -54,6 +54,7 @@ const CheckoutForm = () => {
 
   return (
     <Box
+      zIndex={0}
       mt="20px"
     >
       <form onSubmit={handleSubmit}>

@@ -6,7 +6,8 @@ import {
   Heading, 
   Text, 
   Image, 
-  Center 
+  Center, 
+  Slider
 } from '@chakra-ui/react';
 import Head from 'next/head';
 
@@ -16,8 +17,6 @@ import Vision from './sections/Vision';
 import Projects from './sections/Projects';
 import Partners from './sections/Partners';
 import Volunteer from './sections/volunteer';
-
-
 
 export default function Home() {
 
@@ -33,7 +32,7 @@ export default function Home() {
       > */}
       <Box
         py={{ base: "15vh", md: "15vh" }}
-        backgroundImage={{base: "background_2.jpg", md: "background_1.jpg"}}
+        backgroundImage={{base: "background_2.jpg", md: "background_1.jpg", lg: "background_1.jpg"}}
         backgroundPosition={{base: "right 60% bottom 50%", md: "right 70% bottom 75%", lg: "right 70% bottom 75%"}}
         backgroundSize={"cover"}
       >
@@ -51,22 +50,15 @@ export default function Home() {
       </Box>
       <Box
         py={{ base: "2vh", md: "2vh" }}
-
       >
         <Projects />
       </Box>
-      <Box
-        py={{ base: "2vh", md: "2vh" }}
-
-      >
-        <Partners />
-      </Box>    
-      <Box
+      {/* <Box
         py={{ base: "2vh", md: "2vh" }}
       
       >
         <Volunteer />
-      </Box>
+      </Box> */}
       {/* </Container> */}
       
     </>
