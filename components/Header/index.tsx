@@ -78,6 +78,7 @@ export default function Header(){
             display={{ base: 'none', md: 'flex' }}
           >
             <Link
+              offset={-270}
               to="about"
               smooth={true}
               duration={500}
@@ -95,6 +96,7 @@ export default function Header(){
               </Button>
             </Link>
             <Link
+              offset={-200}
               to="vision"
               smooth={true}
               duration={500}
@@ -175,6 +177,7 @@ export default function Header(){
             to="banner"
             smooth={true}
             duration={500}
+            offset={-270}
           >
             <Button
               fontSize={'sm'}

@@ -8,12 +8,15 @@ import {
   HStack,
   Input,
   InputGroup,
-  InputLeftAddon
+  InputLeftAddon,
+  Spinner
 } from '@chakra-ui/react';
 
 
 import getStripe from '../utils/get-stripejs'
 import { fetchPostJSON } from '../utils/api-helpers'
+
+
 
 const CheckoutForm = () => {
   const [loading, setLoading] = useState(false)
@@ -50,7 +53,11 @@ const CheckoutForm = () => {
     setLoading(false)
   }
 
- 
+
+  const donation = () => {
+    setLoading(true);
+  }
+
 
   return (
     <Box
@@ -265,7 +272,9 @@ const CheckoutForm = () => {
           width="100%"
           backgroundColor="yellow.comfort"
           color="white"
+          onClick={donation}
         >
+          {loading && <Spinner />}
           Doar
         </Button>
       </form>
