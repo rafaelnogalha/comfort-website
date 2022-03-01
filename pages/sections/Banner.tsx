@@ -65,12 +65,12 @@ export default function Banner() {
               Desenvolvimento Comunitário, a um ponto 
               de inteireza e sustentabilidade.
             </Text>
-            {/* <Box
+            <Box
               align="center"
               mt={"40px"}
             >
               <DonatePage />
-            </Box> */}
+            </Box>
           </Box>
           
         </Stack>
