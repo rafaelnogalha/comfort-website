@@ -8,5 +8,5 @@ export function getPrismicClient() {
   //   }
   // )
 
-  // return prismic;
+  return 0;
 }
