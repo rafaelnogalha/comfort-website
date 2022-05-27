@@ -23,10 +23,14 @@ import NextLink from 'next/link';
 import {Link} from 'react-scroll';
 import DesktopNav from './desktopNav'
 import MobileNav from './mobileNav';
+import { FaWhatsapp } from 'react-icons/fa';
 // import ItemsLogo from './itemsLogo';
 
 export default function Header(){
   const { isOpen, onToggle, onClose } = useDisclosure();
+  const openWhatsapp = () => {
+    window.open('https://wa.me/5561982414933', '_blank');
+  }
   return(
 
     <Box
@@ -173,6 +177,15 @@ export default function Header(){
           direction={'row'}
           spacing={2}
         >
+          <IconButton
+            _hover={{
+              bg: "gray.100",
+            }}
+            aria-label={'WhatsApp button'}
+            variant={'ghost'}
+            onClick={ openWhatsapp }
+            icon={<FaWhatsapp color="green" size= '2rem' />}
+          />
           <Link
             to="banner"
             smooth={true}
